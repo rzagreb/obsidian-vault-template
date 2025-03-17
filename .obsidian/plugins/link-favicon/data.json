@@ -1,0 +1,17 @@
+{
+  "provider": "duckduckgo",
+  "fallbackProvider": "google",
+  "providerDomain": "",
+  "fallbackProviderDomain": "",
+  "ignored": "localhost",
+  "overwritten": [],
+  "protocol": [],
+  "showAliased": true,
+  "showLink": false,
+  "enableReading": true,
+  "enableSource": false,
+  "enableLivePreview": true,
+  "debounce": 500,
+  "iconPosition": "front",
+  "colorInversion": true
+}

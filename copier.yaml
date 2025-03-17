@@ -1,0 +1,46 @@
+_min_copier_version: "6.0.0"
+
+dir_import:
+    type: str
+    help: "Folder for automatically added notes from other services (e.g. web clipper). "
+    default: "01_import"
+
+dir_inbox:
+    type: str
+    help: "Folder for manually created or quickly captured notes."
+    default: "02_inbox"
+
+dir_tasks:
+    type: str
+    help: "Folder where your tasks or to-do items are stored. Use it to keep track of actionable notes."
+    default: "03_tasks"
+
+dir_incubator:
+    type: str
+    help: "Folder for early-stage practical ideas (business, projects) that need further development."
+    default: "04_incubator"
+
+dir_wiki:
+    type: str
+    help: "Folder for completed, connected reference notes (knowledge base). These should not include tasks or temporary notes."
+    default: "04_wiki"
+
+dir_code:
+    type: str
+    help: "Folder for code snippets and programming notes."
+    default: "05_code"
+
+dir_fun:
+    type: str
+    help: "Folder for ideas to do some fun things: movies, books, games, palce etc"
+    default: "06_fun"
+
+dir_assets:
+    type: str
+    help: "Folder for all attached files, such as images, videos, or audio, that are embedded in your notes."
+    default: "09_assets"
+
+dir_meta:
+    type: str
+    help: "Folder for Obsidian-specific files (templates, orphan notes, etc.)."
+    default: "99_meta"

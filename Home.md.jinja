@@ -1,0 +1,87 @@
+# Home
+
+## Inbox
+
+```dataview
+TABLE WITHOUT ID
+	link(
+		file.link,
+		regexreplace(
+			replace(regexreplace(file.name, "^\d+_", ""), "_", " "),
+			"^.",
+			upper(substring(replace(regexreplace(file.name, "\d+_", ""), "_", " "),0,1))
+		)
+	) AS "Inbox"
+	,file.cday as "Created At"
+FROM "{{dir_inbox}}"
+WHERE file != this.file
+SORT file.cday DESC
+LIMIT 7
+```
+
+## Wiki
+
+```dataview
+TABLE WITHOUT ID
+	link(
+		file.link,
+		regexreplace(
+			replace(regexreplace(file.name, "^\d+_", ""), "_", " "),
+			"^.",
+			upper(substring(replace(regexreplace(file.name, "\d+_", ""), "_", " "),0,1))
+		)
+	) AS WikiCategory,
+	file.outlinks AS SubCategory
+FROM 
+	"{{dir_wiki}}/culture.md"
+	OR "{{dir_wiki}}/disciplines.md"
+	OR "{{dir_wiki}}/events.md"
+	OR "{{dir_wiki}}/people_and_orgs.md"
+	OR "{{dir_wiki}}/places.md"
+WHERE file != this.file
+SORT file.name, file.outlinks
+```
+---
+
+## Ideas to Review
+
+```dataview
+TABLE WITHOUT ID
+	link(
+		file.link,
+		regexreplace(
+			replace(regexreplace(file.name, "^\d+_", ""), "_", " "),
+			"^.",
+			upper(substring(replace(regexreplace(file.name, "\d+_", ""), "_", " "),0,1))
+		)
+	) AS "Idea"
+	,file.cday as "Created At"
+FROM "06_ideas"
+WHERE file != this.file
+SORT file.cday DESC
+LIMIT 15
+```
+
+
+```dataview
+TABLE WITHOUT ID
+	link(file.link, replace(regexreplace(file.name, "\d+_", ""), "_", " ")) AS "Read Later"
+	,file.cday as "Created At"
+FROM "01_read_later"
+WHERE file != this.file
+SORT file.cday
+```
+
+
+```dataview
+TABLE WITHOUT ID
+	link(file.link, replace(regexreplace(file.name, "\d+_", ""), "_", " ")) AS "To Watch"
+	,file.cday as "Created At"
+FROM "07_media"
+WHERE file != this.file
+SORT file.cday
+```
+
+## Links
+
+[Wiki](04_wiki/WIKI_INDEX.md), [Tasks](03_tasks/All%20Tasks.md), [ORPHAN_NOTES](10_meta/ORPHAN_NOTES.md)

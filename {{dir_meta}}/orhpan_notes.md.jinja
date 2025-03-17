@@ -1,0 +1,20 @@
+# Orphan Notes
+
+```dataview
+TABLE WITHOUT ID
+	link(
+		file.link,
+		regexreplace(
+			replace(regexreplace(file.name, "^\d+_", ""), "_", " "),
+			"^.",
+			upper(substring(replace(regexreplace(file.name, "\d+_", ""), "_", " "), 0, 1))
+		)
+	) AS "Note",
+	file.cday AS "Created At"
+FROM ""
+WHERE
+	length(file.inlinks) = 0
+	AND startswith(file.folder, "{{dir_wiki}}")
+SORT file.cday ASC
+LIMIT 100
+```

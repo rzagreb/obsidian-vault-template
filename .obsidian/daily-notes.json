@@ -1,0 +1,6 @@
+{
+  "folder": "{{dir_inbox}}",
+  "format": "YYMMDD",
+  "autorun": true,
+  "template": "{{dir_meta}}/daily_notes/template_daily_note.md"
+}
