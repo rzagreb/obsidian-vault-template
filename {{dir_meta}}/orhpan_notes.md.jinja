@@ -9,7 +9,7 @@ TABLE WITHOUT ID
 			"^.",
 			upper(substring(replace(regexreplace(file.name, "\d+_", ""), "_", " "), 0, 1))
 		)
-	) AS "Note",
+	) AS "Orphan Note",
 	file.cday AS "Created At"
 FROM ""
 WHERE

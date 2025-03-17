@@ -43,7 +43,7 @@ SORT file.name, file.outlinks
 ```
 ---
 
-## Ideas to Review
+## Incubator
 
 ```dataview
 TABLE WITHOUT ID
@@ -56,32 +56,37 @@ TABLE WITHOUT ID
 		)
 	) AS "Idea"
 	,file.cday as "Created At"
-FROM "06_ideas"
+FROM "{{dir_incubator}}"
 WHERE file != this.file
 SORT file.cday DESC
 LIMIT 15
 ```
 
+## Imported
 
 ```dataview
 TABLE WITHOUT ID
-	link(file.link, replace(regexreplace(file.name, "\d+_", ""), "_", " ")) AS "Read Later"
+	link(file.link, replace(regexreplace(file.name, "\d+_", ""), "_", " ")) AS "Imported"
 	,file.cday as "Created At"
-FROM "01_read_later"
+FROM "{{dir_import}}"
 WHERE file != this.file
 SORT file.cday
 ```
 
+## Fun
 
 ```dataview
 TABLE WITHOUT ID
-	link(file.link, replace(regexreplace(file.name, "\d+_", ""), "_", " ")) AS "To Watch"
+	link(file.link, replace(regexreplace(file.name, "\d+_", ""), "_", " ")) AS "For Fun"
 	,file.cday as "Created At"
-FROM "07_media"
+FROM "{{dir_fun}}"
 WHERE file != this.file
 SORT file.cday
 ```
 
 ## Links
 
-[Wiki](04_wiki/WIKI_INDEX.md), [Tasks](03_tasks/All%20Tasks.md), [ORPHAN_NOTES](10_meta/ORPHAN_NOTES.md)
+Links below are added only to create indexed links for the home page.
+
+- [Orphan Notes]({{dir_meta}}/orhpan_notes.md),
+- Wiki: [Culture]({{dir_wiki}}/culture.md), [Disciplines]({{dir_wiki}}/disciplines.md), [Events]({{dir_wiki}}/events.md), [People and Orgs]({{dir_wiki}}/people_and_orgs.md), [Places]({{dir_wiki}}/places.md)
