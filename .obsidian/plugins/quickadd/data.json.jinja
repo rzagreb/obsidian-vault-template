@@ -5,12 +5,10 @@
       "name": "New Inbox Note",
       "type": "Template",
       "command": true,
-      "templatePath": "{{dir_meta}/quickadd/template_new_note.md",
+      "templatePath": "{{dir_meta}}/quickadd/template_new_note.md",
       "fileNameFormat": {
         "enabled": true,
-        {% raw %}
-        "format": "{{date:YYMMDD}}_{{name}}"
-        {% endraw %}
+        "format": "{% raw %}{{date:YYMMDD}}_{{name}}{% endraw %}"
       },
       "folder": {
         "enabled": true,
@@ -36,7 +34,7 @@
   "macros": [],
   "inputPrompt": "single-line",
   "devMode": false,
-  "templateFolderPath": "{{dir_meta}/quickadd",
+  "templateFolderPath": "{{dir_meta}}/quickadd",
   "announceUpdates": true,
   "version": "1.13.0",
   "disableOnlineFeatures": true,
