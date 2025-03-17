@@ -1,4 +1,6 @@
 _min_copier_version: "6.0.0"
+exclude:
+  - README.md
 
 dir_import:
     type: str
@@ -32,7 +34,7 @@ dir_code:
 
 dir_fun:
     type: str
-    help: "Folder for ideas to do some fun things: movies, books, games, places etc"
+    help: "Folder for ideas to do some fun things: movies, books, games, visit places etc."
     default: "06_fun"
 
 dir_assets:
