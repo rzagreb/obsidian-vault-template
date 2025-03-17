@@ -1,5 +1,5 @@
-_min_copier_version: "6.0.0"
-exclude:
+_min_copier_version: "9.6.0"
+_exclude:
   - README.md
 
 dir_import:
